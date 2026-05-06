@@ -13,6 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    window.iriennesAnalytics = {
+      measurementId: "G-722TGK84CT"
+    };
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -43,7 +48,7 @@
       <a href="#menu">Menu</a>
       <a href="#order">Order</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="nav-cta" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener" data-analytics-event="contact_click" data-analytics-method="whatsapp" data-analytics-location="header">WhatsApp</a>
     </nav>
   </header>
 
@@ -63,8 +68,8 @@
         <h1 id="hero-title">Un dushi quesillo pa disfruta cu bo dia!</h1>
         <p class="hero-lede">Homemade, glossy, caramel-happy quesillo from Noord. Made fresh for birthdays, office treats, family visits, and everyday cravings.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener">Order on WhatsApp</a>
-          <a class="button button-soft" href="#menu">View Price List</a>
+          <a class="button button-primary" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener" data-analytics-event="contact_click" data-analytics-method="whatsapp" data-analytics-location="hero">Order on WhatsApp</a>
+          <a class="button button-soft" href="#menu" data-analytics-event="navigation_click" data-analytics-location="hero">View Price List</a>
         </div>
       </div>
     </section>
@@ -182,9 +187,9 @@
           <h2 id="contact-title">Send Irienne a message.</h2>
           <p>Ask about availability, pickup time, and the best size for your event.</p>
           <div class="contact-actions">
-            <a class="button button-primary" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener">WhatsApp +297 566 8247</a>
-            <a class="button button-soft" href="mailto:irienneflantastic@gmail.com">Email Irienne</a>
-            <a class="button button-map" href="https://www.google.com/maps/search/?api=1&amp;query=Noord%2031%20B%2C%20Aruba" target="_blank" rel="noopener">Open Map</a>
+            <a class="button button-primary" href="https://wa.me/2975668247?text=Hi%20Irienne%27s%20Flantastic%21%20I%27d%20like%20to%20order%20quesillo." target="_blank" rel="noopener" data-analytics-event="contact_click" data-analytics-method="whatsapp" data-analytics-location="contact">WhatsApp +297 566 8247</a>
+            <a class="button button-soft" href="mailto:irienneflantastic@gmail.com" data-analytics-event="contact_click" data-analytics-method="email" data-analytics-location="contact">Email Irienne</a>
+            <a class="button button-map" href="https://www.google.com/maps/search/?api=1&amp;query=Noord%2031%20B%2C%20Aruba" target="_blank" rel="noopener" data-analytics-event="contact_click" data-analytics-method="map" data-analytics-location="contact">Open Map</a>
           </div>
         </div>
       </div>
