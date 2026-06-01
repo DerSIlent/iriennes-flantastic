@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play Caramel Catch, a tiny Irienne's Flantastic quesillo mini game.">
+  <meta property="og:title" content="Caramel Catch | Irienne's Flantastic!">
+  <meta property="og:description" content="Move the plate, catch caramel, and keep your sweet streak going.">
+  <meta property="og:image" content="assets/quesillo-poster.jpg">
+  <title>Caramel Catch | Irienne's Flantastic!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.iriennesAnalytics = {
+      measurementId: "G-722TGK84CT"
+    };
+  </script>
+</head>
+<body class="game-page-body">
+  <main class="game-page">
+    <section class="game-hero-page" aria-labelledby="game-title">
+      <div class="catch-stage" role="application" aria-label="Caramel Catch game area" tabindex="0" data-catch-stage>
+        <div class="game-topbar">
+          <a class="game-home-link" href="index.html#top" aria-label="Back to Irienne's Flantastic home" data-catch-home>Home</a>
+          <div class="game-title-card">
+            <p class="eyebrow">Mini Game</p>
+            <h1 id="game-title">Caramel Catch</h1>
+          </div>
+          <div class="catch-hud">
+            <div class="catch-chip">
+              <span>Streak</span>
+              <strong data-catch-streak>0</strong>
+            </div>
+            <div class="catch-score" aria-live="polite">
+              <span>Score</span>
+              <strong data-catch-score>0</strong>
+            </div>
+          </div>
+        </div>
+
+        <p class="catch-status" data-catch-status>Press start, then move the plate to catch caramel and dodge dark drops.</p>
+
+        <div class="game-controls">
+          <button class="button button-primary" type="button" data-catch-start>Start game</button>
+          <button class="button button-soft" type="button" data-catch-pause>Pause (Esc)</button>
+          <button class="button button-map" type="button" data-catch-reset>Reset score</button>
+          <span class="game-help">Esc pauses · arrows/A/D, mouse, or touch move the plate</span>
+        </div>
+
+        <div class="catcher" data-catch-catcher aria-hidden="true">
+          <div class="catcher-flan">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

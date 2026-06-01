@@ -72,6 +72,8 @@ function trackAnalyticsEvent(eventName, params = {}) {
   window.gtag("event", eventName, params);
 }
 
+window.iriennesTrackEvent = trackAnalyticsEvent;
+
 if (hasMeasurementId) {
   const storedConsent = getStoredConsent();
 

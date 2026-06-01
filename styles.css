@@ -312,6 +312,34 @@ a {
   background: var(--mint);
 }
 
+.button-game {
+  color: #fff;
+  background: var(--purple);
+  box-shadow: 8px 8px 0 var(--guava);
+  animation: gameButtonWiggle 2.6s ease-in-out infinite;
+}
+
+.button-game:hover {
+  color: #fff;
+  background: var(--guava);
+  box-shadow: 8px 8px 0 var(--purple);
+}
+
+@keyframes gameButtonWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  40% {
+    transform: rotate(-1.5deg) translateY(-2px);
+  }
+
+  58% {
+    transform: rotate(1.5deg) translateY(-2px);
+  }
+}
+
 .sparkle {
   position: absolute;
   z-index: -2;
@@ -382,6 +410,438 @@ a {
   gap: 1px;
   color: #fff;
   background: rgba(255, 255, 255, 0.45);
+}
+
+.game-page-body {
+  height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(var(--lilac) 2px, transparent 3px) 0 0 / 24px 24px,
+    linear-gradient(180deg, var(--cream), var(--blush) 56%, var(--cream));
+}
+
+.game-page {
+  height: 100svh;
+  padding: 0;
+}
+
+.game-hero-page {
+  width: 100%;
+  height: 100%;
+}
+
+.game-controls {
+  position: absolute;
+  z-index: 5;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.game-controls .button,
+.game-controls .game-help {
+  pointer-events: auto;
+}
+
+.game-help {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: var(--purple-dark);
+  background: rgba(255, 254, 251, 0.86);
+  box-shadow: 5px 5px 0 rgba(216, 181, 238, 0.66);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.catch-stage {
+  --catcher-left: 50%;
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255, 224, 125, 0.78) 0 6%, transparent 7%),
+    radial-gradient(circle at 86% 16%, rgba(216, 181, 238, 0.9) 0 7%, transparent 8%),
+    radial-gradient(circle at 78% 74%, rgba(188, 239, 169, 0.78) 0 7%, transparent 8%),
+    linear-gradient(180deg, rgba(255, 254, 251, 0.94), rgba(242, 220, 255, 0.88)),
+    var(--paper);
+  box-shadow: inset 0 -18px 0 rgba(255, 224, 125, 0.22);
+  outline: none;
+  touch-action: none;
+}
+
+.game-topbar {
+  position: absolute;
+  z-index: 5;
+  top: 18px;
+  right: 18px;
+  left: 18px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  pointer-events: none;
+}
+
+.game-home-link,
+.game-title-card,
+.catch-hud {
+  pointer-events: auto;
+}
+
+.game-home-link {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--purple);
+  box-shadow: 5px 5px 0 var(--guava);
+  font-weight: 900;
+}
+
+.game-title-card {
+  justify-self: center;
+  min-width: min(420px, 100%);
+  padding: 12px 18px 14px;
+  border: 2px solid #fff;
+  border-radius: var(--radius);
+  text-align: center;
+  background: rgba(255, 254, 251, 0.84);
+  box-shadow: 7px 7px 0 rgba(255, 224, 125, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.game-title-card .eyebrow {
+  margin-bottom: 5px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.game-title-card h1 {
+  margin: 0;
+  color: var(--purple-dark);
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 0.82;
+  letter-spacing: 0;
+  text-shadow: 3px 3px 0 rgba(255, 224, 125, 0.86);
+}
+
+.catch-stage::before,
+.catch-stage::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.catch-stage::before {
+  right: -6%;
+  bottom: -1px;
+  left: -6%;
+  height: 100px;
+  background: rgba(255, 220, 204, 0.92);
+  clip-path: polygon(0 45%, 10% 28%, 21% 47%, 33% 31%, 44% 54%, 58% 31%, 69% 52%, 82% 27%, 92% 47%, 100% 33%, 100% 100%, 0 100%);
+}
+
+.catch-stage::after {
+  top: 23%;
+  left: 8%;
+  width: 76px;
+  height: 76px;
+  color: var(--guava);
+  background: currentColor;
+  clip-path: polygon(50% 0, 61% 36%, 100% 50%, 61% 64%, 50% 100%, 39% 64%, 0 50%, 39% 36%);
+  opacity: 0.22;
+  animation: stageSparkle 3.5s ease-in-out infinite;
+}
+
+.catch-stage:focus-visible {
+  box-shadow: 0 0 0 5px rgba(123, 75, 182, 0.22), inset 0 -18px 0 rgba(255, 224, 125, 0.22);
+}
+
+.catch-stage.is-running .catch-status {
+  opacity: 0.78;
+}
+
+.catch-hud {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.catch-chip,
+.catch-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 8px 13px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--purple);
+  box-shadow: 5px 5px 0 var(--custard);
+}
+
+.catch-chip {
+  color: var(--purple-dark);
+  background: var(--mint);
+  box-shadow: 5px 5px 0 var(--lilac);
+}
+
+.catch-chip span,
+.catch-score span {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.catch-chip strong,
+.catch-score strong {
+  min-width: 2ch;
+  font-family: var(--display);
+  font-size: 1.55rem;
+  line-height: 1;
+  text-align: right;
+  letter-spacing: 0;
+}
+
+.catch-score {
+  background: var(--purple);
+}
+
+.catch-status {
+  position: absolute;
+  z-index: 3;
+  top: 78px;
+  left: 16px;
+  max-width: min(380px, calc(100% - 32px));
+  margin: 0;
+  padding: 10px 13px;
+  border: 2px solid #fff;
+  border-radius: var(--radius);
+  color: var(--purple-dark);
+  background: rgba(255, 254, 251, 0.82);
+  box-shadow: 5px 5px 0 rgba(255, 224, 125, 0.72);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.catcher {
+  position: absolute;
+  z-index: 2;
+  left: var(--catcher-left);
+  bottom: 108px;
+  width: clamp(148px, 24vw, 230px);
+  height: 112px;
+  transform: translateX(-50%);
+  transition: transform 90ms linear;
+}
+
+.catch-stage.is-running .catcher {
+  animation: catcherBounce 520ms ease-in-out infinite;
+}
+
+.catcher::before {
+  position: absolute;
+  right: -4%;
+  bottom: 0;
+  left: -4%;
+  height: 44px;
+  border-radius: 50%;
+  content: "";
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(75, 33, 25, 0.18);
+}
+
+.catcher-flan {
+  position: absolute;
+  right: 12%;
+  bottom: 24px;
+  left: 12%;
+  height: 70px;
+  border-radius: 20% 20% 46% 46% / 22% 22% 62% 62%;
+  background:
+    radial-gradient(circle at 34% 52%, var(--cocoa) 0 4px, transparent 5px),
+    radial-gradient(circle at 66% 52%, var(--cocoa) 0 4px, transparent 5px),
+    linear-gradient(180deg, var(--custard), #fff0bd 62%, #ffd86f);
+  box-shadow: inset 0 13px 0 rgba(255, 255, 255, 0.38);
+}
+
+.catcher-flan::before {
+  position: absolute;
+  top: -14px;
+  right: -4px;
+  left: -4px;
+  height: 30px;
+  border-radius: 50%;
+  content: "";
+  background: linear-gradient(180deg, #ffb23c, var(--caramel));
+  box-shadow: inset 0 -5px 0 rgba(75, 33, 25, 0.1);
+}
+
+.catcher-flan::after {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  left: 0;
+  height: 12px;
+  content: "";
+  background:
+    radial-gradient(circle at 45% 58%, var(--cocoa) 0 2px, transparent 3px),
+    radial-gradient(circle at 55% 58%, var(--cocoa) 0 2px, transparent 3px);
+}
+
+.catcher-flan span {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  width: 34px;
+  height: 22px;
+  transform: translateX(-50%);
+}
+
+.catcher-flan span::before,
+.catcher-flan span::after {
+  position: absolute;
+  top: 5px;
+  width: 20px;
+  height: 14px;
+  border: 2px solid var(--mint-dark);
+  border-radius: 90% 0;
+  content: "";
+  background: var(--mint);
+}
+
+.catcher-flan span::before {
+  right: 14px;
+  transform: rotate(20deg);
+}
+
+.catcher-flan span::after {
+  left: 14px;
+  transform: scaleX(-1) rotate(20deg);
+}
+
+.falling-caramel {
+  position: absolute;
+  z-index: 2;
+  left: var(--drop-x);
+  top: 0;
+  width: 54px;
+  height: 64px;
+  border-radius: 55% 45% 58% 42% / 66% 58% 42% 34%;
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255, 255, 255, 0.84) 0 9%, transparent 10%),
+    linear-gradient(180deg, #ffb23c, var(--caramel));
+  box-shadow: 6px 6px 0 rgba(123, 75, 182, 0.18), 0 14px 24px rgba(183, 79, 16, 0.22);
+  transform: translate(-50%, -80px);
+  will-change: transform;
+}
+
+.falling-caramel::after {
+  position: absolute;
+  right: 14px;
+  top: 13px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  content: "";
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.bonus-caramel {
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255, 255, 255, 0.9) 0 9%, transparent 10%),
+    linear-gradient(180deg, #fff6a8, #f8c822 52%, #ef7e00);
+  box-shadow: 0 0 0 5px rgba(255, 224, 125, 0.32), 6px 6px 0 rgba(123, 75, 182, 0.18), 0 14px 28px rgba(239, 126, 0, 0.3);
+  animation: bonusPulse 740ms ease-in-out infinite;
+}
+
+.bad-caramel {
+  border-radius: 46% 54% 40% 60% / 42% 48% 52% 58%;
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255, 255, 255, 0.45) 0 8%, transparent 9%),
+    linear-gradient(180deg, #7a4d3d, #2c1510);
+  box-shadow: 6px 6px 0 rgba(240, 109, 130, 0.24), 0 14px 24px rgba(75, 33, 25, 0.3);
+}
+
+.falling-caramel.is-caught {
+  animation: caramelCaught 260ms ease-out forwards;
+}
+
+.falling-caramel.is-missed {
+  animation: caramelMissed 240ms ease-out forwards;
+}
+
+@keyframes catcherBounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes stageSparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.16) rotate(8deg);
+  }
+}
+
+@keyframes bonusPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.22);
+  }
+}
+
+@keyframes caramelCaught {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8) rotate(16deg);
+  }
+}
+
+@keyframes caramelMissed {
+  to {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.72);
+  }
 }
 
 .strip-item {
@@ -896,6 +1356,14 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .game-title-card {
+    min-width: min(330px, 100%);
+  }
+
+  .game-title-card h1 {
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+  }
+
   .strip-item {
     min-height: 104px;
   }
@@ -947,6 +1415,90 @@ a {
   .button,
   .contact-actions {
     width: 100%;
+  }
+
+  .game-topbar {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .game-title-card {
+    display: none;
+  }
+
+  .game-home-link {
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .catch-hud {
+    justify-self: end;
+    gap: 8px;
+  }
+
+  .catch-chip,
+  .catch-score {
+    min-height: 40px;
+    gap: 6px;
+    padding: 6px 9px;
+  }
+
+  .catch-chip span,
+  .catch-score span {
+    font-size: 0.58rem;
+  }
+
+  .catch-chip strong,
+  .catch-score strong {
+    font-size: 1.18rem;
+  }
+
+  .catch-status {
+    top: 62px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  .game-controls {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .game-controls .button {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 6px;
+    font-size: 0.76rem;
+  }
+
+  .game-help {
+    min-height: 34px;
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding: 7px 10px;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  .catcher {
+    bottom: 104px;
+    width: clamp(132px, 42vw, 180px);
+  }
+
+  .falling-caramel {
+    width: 46px;
+    height: 56px;
   }
 
   .price-board {
