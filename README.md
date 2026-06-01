@@ -21,7 +21,18 @@ window.iriennesAnalytics = {
 };
 ```
 
-Analytics stays disabled until the ID is filled in. Once enabled, the site tracks page views plus WhatsApp, email, map, and menu CTA clicks.
+Analytics stays disabled until the ID is filled in and the visitor accepts analytics in the cookie banner. Once enabled, the site tracks page views plus WhatsApp, email, map, and menu CTA clicks.
+
+## Cookie / Privacy Banner
+
+Because the site uses GA4, it includes a lighthearted cookie banner that explains Google Analytics in plain language and lets visitors choose between analytics cookies and essentials only.
+
+GA4 only loads after the visitor accepts analytics cookies. The choice is stored in `localStorage` under `iriennes_analytics_consent`, and the footer includes a "Cookie choices" button so visitors can reopen the banner.
+
+Reference links:
+
+- ChatGPT discussion: https://chatgpt.com/c/6a1afd74-6914-832b-b26f-2c2d411e37a2
+- Banner/policy reference screenshot: https://gyazo.com/1aa031da0c36fcb160357dece47b687c
 
 ## GitHub Pages
 
