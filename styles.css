@@ -335,6 +335,7 @@ a {
   width: 92px;
   height: 92px;
   color: var(--purple);
+  animation: sparkleFloat 7.4s cubic-bezier(0.45, 0, 0.35, 1) infinite;
 }
 
 .sparkle::before,
@@ -364,6 +365,10 @@ a {
   width: 66px;
   height: 66px;
   opacity: 0.75;
+  animation-name: sparkleDrift;
+  animation-duration: 9.7s;
+  animation-timing-function: cubic-bezier(0.2, 0.65, 0.36, 1);
+  animation-delay: -3.1s;
 }
 
 .ribbon {
@@ -377,6 +382,7 @@ a {
   border-radius: 50%;
   opacity: 0.58;
   transform: rotate(-13deg);
+  animation: ribbonBob 8.8s cubic-bezier(0.39, 0, 0.2, 1) infinite;
 }
 
 .ribbon-one {
@@ -391,6 +397,70 @@ a {
   border-right-color: transparent;
   border-left-color: transparent;
   transform: rotate(18deg);
+  animation-name: ribbonBobReverse;
+  animation-duration: 11.6s;
+  animation-timing-function: cubic-bezier(0.18, 0.78, 0.42, 1);
+  animation-delay: -4.9s;
+}
+
+@keyframes sparkleFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  38% {
+    transform: translate(7px, -18px) rotate(7deg) scale(1.04);
+  }
+
+  68% {
+    transform: translate(-5px, -8px) rotate(-4deg) scale(1.09);
+  }
+}
+
+@keyframes sparkleDrift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  44% {
+    transform: translate(-10px, 13px) rotate(-12deg) scale(0.94);
+  }
+
+  73% {
+    transform: translate(6px, -10px) rotate(8deg) scale(1.08);
+  }
+}
+
+@keyframes ribbonBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-13deg);
+  }
+
+  34% {
+    transform: translate(5px, 16px) rotate(-9deg);
+  }
+
+  71% {
+    transform: translate(-7px, 5px) rotate(-16deg);
+  }
+}
+
+@keyframes ribbonBobReverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(18deg);
+  }
+
+  42% {
+    transform: translate(-8px, -15px) rotate(13deg);
+  }
+
+  76% {
+    transform: translate(5px, 7px) rotate(22deg);
+  }
 }
 
 .brand-strip {
