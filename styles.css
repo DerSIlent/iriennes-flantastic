@@ -203,14 +203,14 @@ a {
 .hero-video {
   z-index: -4;
   object-fit: cover;
-  filter: saturate(1.1) brightness(1.12);
+  filter: saturate(0.76) brightness(0.92);
 }
 
 .hero-wash {
   z-index: -3;
   background:
-    linear-gradient(90deg, rgba(255, 250, 244, 0.94), rgba(255, 250, 244, 0.76) 52%, rgba(242, 220, 255, 0.66)),
-    linear-gradient(180deg, rgba(255, 250, 244, 0.18), rgba(255, 220, 204, 0.88));
+    linear-gradient(90deg, rgba(255, 250, 244, 0.96), rgba(255, 250, 244, 0.84) 52%, rgba(242, 220, 255, 0.74)),
+    linear-gradient(180deg, rgba(255, 250, 244, 0.32), rgba(255, 220, 204, 0.9));
 }
 
 .hero-copy {
@@ -219,7 +219,6 @@ a {
   text-align: center;
 }
 
-.eyebrow,
 .section-kicker,
 .card-kicker {
   margin: 0;
@@ -228,16 +227,6 @@ a {
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  display: inline-flex;
-  margin-bottom: 18px;
-  padding: 9px 13px;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  background: var(--mint);
-  box-shadow: 7px 7px 0 var(--lilac);
 }
 
 .hero h1,
@@ -529,12 +518,13 @@ a {
   backdrop-filter: blur(10px);
 }
 
-.game-title-card .eyebrow {
-  margin-bottom: 5px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+.game-kicker {
+  margin: 0 0 5px;
+  color: var(--purple-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .game-title-card h1 {
@@ -1087,7 +1077,7 @@ a {
 .steps {
   width: min(1040px, 100%);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
   margin: 0 auto;
 }
@@ -1109,6 +1099,26 @@ a {
   box-shadow: 7px 7px 0 var(--custard);
   font-family: var(--display);
   font-size: 2rem;
+}
+
+.delivery-step {
+  background: var(--mint);
+}
+
+.delivery-fees {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.delivery-fees strong {
+  display: block;
+  padding: 10px 12px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: var(--purple-dark);
+  background: rgba(255, 254, 251, 0.74);
+  font-size: 0.88rem;
 }
 
 .contact-section {

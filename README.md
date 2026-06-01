@@ -29,6 +29,13 @@ Gameplay notes:
 - `game.html` intentionally does not show the site header, footer, or cookie banner so the game can use the whole screen.
 - When analytics consent exists, the game sends a GA4 `post_score` event when a play session ends by reset, Home navigation, or page exit.
 
+## Ordering Notes
+
+The order section mentions pickup at Noord 31 B and delivery availability. Delivery fees depend on distance:
+
+- Pabou di brug - AWG 5
+- Pariba di brug - AWG 10
+
 ## Analytics and Privacy
 
 The site uses Google Analytics 4 with a consent banner. The GA4 Measurement ID is configured in `index.html` and `game.html`:
